@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sorting Algorithm Visualizer</h1>
+        </header>
+
+        <!-- Controls Section -->
+        <div class="controls">
+            <div class="control-group">
+                <button id="generateArray" onclick="generateArray()">New Array</button>
+                <button id="resetButton" onclick="resetToOriginal()" disabled>Reset to Original</button>
+                <div class="range-control">
+                    <label for="arraySize">Size</label>
+                    <input type="range" id="arraySize" min="5" max="100" value="10">
+                </div>
+                <div class="range-control">
+                    <label for="sortSpeed">Speed</label>
+                    <input type="range" id="sortSpeed" min="1" max="100" value="50">
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <select id="algorithm" aria-label="Select sorting algorithm">
+                    <option value="bubbleSort">Bubble Sort</option>
+                    <option value="selectionSort">Selection Sort</option>
+                    <option value="insertionSort">Insertion Sort</option>
+                    <option value="mergeSort">Merge Sort</option>
+                    <option value="quickSort">Quick Sort</option>
+                    <option value="heapSort">Heap Sort</option>
+                </select>
+                <button id="sortButton" onclick="startSorting()">Start Sorting</button>
+            </div>
+        </div>
+
+        <!-- Visualization Container -->
+        <div id="visualization">
+            <div id="barContainer"></div>
+            <button id="soundToggle" onclick="toggleSound()" title="Toggle sound">🔇</button>
+        </div>
+
+        <!-- Info Panels -->
+        <div class="info-panels">
+            <div class="panel time-complexity">
+                <h2>Time Complexity</h2>
+                <div class="complexity-grid">
+                    <div class="complexity-card" id="best-case">
+                        <div class="complexity-header">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Best</h3>
+                        </div>
+                        <div class="complexity-value"><span id="best">-</span></div>
+                    </div>
+                    <div class="complexity-card" id="avg-case">
+                        <div class="complexity-header">
+                            <i class="fas fa-balance-scale"></i>
+                            <h3>Average</h3>
+                        </div>
+                        <div class="complexity-value"><span id="average">-</span></div>
+                    </div>
+                    <div class="complexity-card" id="worst-case">
+                        <div class="complexity-header">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h3>Worst</h3>
+                        </div>
+                        <div class="complexity-value"><span id="worst">-</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel performance-matrix">
+                <h2>Performance Metrics</h2>
+                <div class="metrics-container">
+                    <div class="metric-group">
+                        <div class="metric">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="metric-label">Comparisons</span>
+                            <span class="metric-value" id="comparisonMetric">0</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-retweet"></i>
+                            <span class="metric-label">Swaps</span>
+                            <span class="metric-value" id="swapMetric">0</span>
+                        </div>
+                    </div>
+                    <div class="metric-group">
+                        <div class="metric">
+                            <i class="fas fa-clock"></i>
+                            <span class="metric-label">Time</span>
+                            <span class="metric-value" id="timeMetric">0ms</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span class="metric-label">Speed</span>
+                            <span class="metric-value" id="speedMetric">0 ops/ms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel code-preview">
+                <h2>Algorithm Code</h2>
+                <pre id="algorithmCode"></pre>
+            </div>
+            
+            <div class="panel color-legend">
+                <h2>Visual Legend</h2>
+                <div class="legend-items">
+                    <div class="legend-item"><span class="box default"></span>Unsorted</div>
+                    <div class="legend-item"><span class="box comparing"></span>Comparing</div>
+                    <div class="legend-item"><span class="box swapping"></span>Swapping</div>
+                    <div class="legend-item"><span class="box pivot"></span>Pivot</div>
+                    <div class="legend-item"><span class="box sorted"></span>Sorted</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="aesthetic-footer" id="dynamic-footer">
+        <p>Created by <span class="highlight">Subrat Raj</span></p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
