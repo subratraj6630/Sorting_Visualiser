@@ -583,3 +583,86 @@ body.sorting .bar:hover {
 .container {
     padding-bottom: 60px;
 }
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .control-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    button, select {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    #barContainer {
+        height: 250px;
+    }
+
+    .bar {
+        min-width: 3px;
+    }
+
+    .info-panels {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .panel {
+        padding: 1rem;
+    }
+
+    .complexity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-group {
+        grid-template-columns: 1fr;
+    }
+
+    .legend-items {
+        grid-template-columns: 1fr;
+    }
+
+    .aesthetic-footer {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #barContainer {
+        height: 200px;
+    }
+
+    .bar {
+        min-width: 2px;
+    }
+
+    .metric-label, .metric-value, .complexity-value {
+        font-size: 0.8rem;
+    }
+
+    .aesthetic-footer {
+        font-size: 0.8em;
+    }
+}
