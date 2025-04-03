@@ -24,4 +24,3 @@
 ## Purpose
 
 The primary goal of this project is to provide an educational tool for students and developers to learn and understand sorting algorithms through visualization. It bridges the gap between theoretical knowledge and practical understanding.
-
