@@ -566,7 +566,7 @@ body.sorting .bar:hover {
     background: linear-gradient(135deg, #2c3e50, #3498db); /* Gradient background */
     color: #ecf0f1;
     position: relative; /* Change to relative to avoid overlap */
-    margin-top: 20px; /* Add spacing above the footer */
+    margin-top: 40px; /* Add more spacing above the footer */
     width: 100%;
     left: 0;
     font-family: 'Arial', sans-serif;
