@@ -20,7 +20,7 @@ body {
     background: var(--background);
     color: white;
     min-height: 100vh;
-    padding-bottom: 80px; /* Add padding to prevent footer overlap */
+    padding-bottom: 0; /* Revert padding to prevent footer overlap */
 }
 
 .container {
@@ -28,7 +28,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 0;
-    padding-bottom: 60px;
+    padding-bottom: 0; /* Revert padding for container */
 }
 
 header {
@@ -215,6 +215,10 @@ input[type="range"] {
     .range-control {
         justify-content: space-between;
     }
+
+    body {
+        padding-bottom: 0; /* Revert padding for smaller screens */
+    }
 }
 
 /* Bar Number Styling */
@@ -256,6 +260,10 @@ input[type="range"] {
 
     .bar {
         min-width: 3px;
+    }
+
+    body {
+        padding-bottom: 0; /* Revert padding for mobile */
     }
 }
 /* Add this to your existing styles.css */
