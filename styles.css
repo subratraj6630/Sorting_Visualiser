@@ -666,3 +666,25 @@ body.sorting .bar:hover {
         font-size: 0.8em;
     }
 }
+
+/* Fix for text overflow in complexity boxes */
+.complexity-item {
+    word-wrap: break-word; /* Ensure long words break */
+    word-break: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Handle word wrapping */
+    font-size: 1rem; /* Adjust font size for better fit */
+}
+
+@media (max-width: 768px) {
+    .complexity-item {
+        font-size: 0.9rem; /* Reduce font size on smaller screens */
+        padding: 10px; /* Adjust padding for better fit */
+    }
+}
+
+@media (max-width: 480px) {
+    .complexity-item {
+        font-size: 0.8rem; /* Further reduce font size for mobile */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+}
