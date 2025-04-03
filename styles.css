@@ -20,6 +20,7 @@ body {
     background: var(--background);
     color: white;
     min-height: 100vh;
+    padding-bottom: 80px; /* Add padding to prevent footer overlap */
 }
 
 .container {
@@ -27,6 +28,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 0;
+    padding-bottom: 60px;
 }
 
 header {
@@ -108,6 +110,7 @@ input[type="range"] {
     border-radius: 10px;
     padding: 1rem;
     margin: 2rem 0;
+    position: relative; /* Add this */
 }
 
 #barContainer {
@@ -353,10 +356,6 @@ body.sorting .bar:hover {
     color: #ffe66d;
 }
 
-#visualization {
-    position: relative; /* Add this */
-}
-
 /* Add button styling */
 #resetButton {
     background: linear-gradient(to right, #4ecdc4, #45b7af);
@@ -391,6 +390,12 @@ body.sorting .bar:hover {
     border-radius: 8px;
     position: relative;
     overflow: hidden;
+    word-wrap: break-word; /* Ensure long words break */
+    word-break: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Handle word wrapping */
+    font-size: 1rem; /* Adjust font size for better fit */
+    overflow: hidden; /* Prevent content overflow */
+    text-align: center; /* Center-align text */
 }
 
 .case-type {
@@ -503,6 +508,15 @@ body.sorting .bar:hover {
     .legend-items {
         grid-template-columns: 1fr;
     }
+
+    .aesthetic-footer {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    body {
+        padding-bottom: 100px; /* Adjust padding for smaller screens */
+    }
 }
 
 /* Text and Element Styling */
@@ -539,8 +553,8 @@ body.sorting .bar:hover {
     padding: 15px;
     background: linear-gradient(135deg, #2c3e50, #3498db); /* Gradient background */
     color: #ecf0f1;
-    position: fixed;
-    bottom: -60px; /* Initially hidden below the viewport */
+    position: relative; /* Change to relative to avoid overlap */
+    margin-top: 20px; /* Add spacing above footer */
     width: 100%;
     left: 0;
     font-family: 'Arial', sans-serif;
@@ -580,11 +594,6 @@ body.sorting .bar:hover {
     }
 }
 
-.container {
-    padding-bottom: 60px;
-}
-
-/* Responsive Design Enhancements */
 @media (max-width: 768px) {
     .container {
         width: 100%;
@@ -665,6 +674,10 @@ body.sorting .bar:hover {
     .aesthetic-footer {
         font-size: 0.8em;
     }
+
+    body {
+        padding-bottom: 120px; /* Further adjust padding for mobile */
+    }
 }
 
 /* Fix for text overflow in complexity boxes */
@@ -673,6 +686,8 @@ body.sorting .bar:hover {
     word-break: break-word; /* Break long words */
     overflow-wrap: break-word; /* Handle word wrapping */
     font-size: 1rem; /* Adjust font size for better fit */
+    overflow: hidden; /* Prevent content overflow */
+    text-align: center; /* Center-align text */
 }
 
 @media (max-width: 768px) {
